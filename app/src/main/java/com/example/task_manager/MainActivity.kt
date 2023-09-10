@@ -16,8 +16,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.task_manager.ui.theme.Task_managerTheme
 
@@ -50,23 +54,31 @@ fun SetUp(){
 @Composable
 fun TaskManager(name: String, imagePainter: Painter, secondText: String,  modifier: Modifier = Modifier) {
 
-  Column(verticalArrangement = Arrangement.Center ,modifier = modifier){
+  Column(
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = modifier.
+                        fillMaxSize()
+                        .fillMaxHeight()){
 
     Image(
          painter = imagePainter,
          contentDescription = null,
 
+
     )
     Text(
         text =name,
         fontSize = 16.sp,
-        textAlign = TextAlign.Justify,
+        fontWeight = FontWeight.Bold,
+        modifier = Modifier.padding(top = 24.dp, bottom = 8.dp),
+
     )
 
     Text(
         text =secondText,
         fontSize = 10.sp,
-        textAlign = TextAlign.Justify,
+
     )
 
   }
